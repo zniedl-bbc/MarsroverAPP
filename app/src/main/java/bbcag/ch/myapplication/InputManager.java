@@ -3,28 +3,32 @@ package bbcag.ch.myapplication;
 import android.view.View;
 import android.widget.TextView;
 
+import bbcag.ch.myapplication.rovercontroll.ApolloController;
+
 /**
  * Created by zniedl on 17.06.2016.
  */
 public class InputManager {
 
+    private ApolloController controller = new ApolloController();
+
 
     public void handleInputMovement(View v, HUDActivity hudActivity) {
         TextView command = (TextView) hudActivity.findViewById(R.id.command);
         if(v.equals(hudActivity.findViewById(R.id.forwardbutton))){
-            command.setText("Forwards");
+            controller.motionCommand("servoForward");
         }
         if(v.equals(hudActivity.findViewById(R.id.backwardbutton))){
-            command.setText("Backwards");
+            controller.motionCommand("servoBackward");
         }
         if(v.equals(hudActivity.findViewById(R.id.leftbutton))){
-            command.setText("Left");
+            controller.motionCommand("servoLeft");
         }
         if(v.equals(hudActivity.findViewById(R.id.rightbutton))) {
-            command.setText("Right");
+            controller.motionCommand("servoRight");
         }
         if(v.equals(hudActivity.findViewById(R.id.stopMovement))){
-            command.setText("Movement stop");
+            controller.motionCommand("emergencyStop");
         }
 
     }
@@ -34,19 +38,16 @@ public class InputManager {
     public void hadleInputCamera(View v, HUDActivity hudActivity){
         TextView command = (TextView) hudActivity.findViewById(R.id.command);
         if(v.equals(hudActivity.findViewById(R.id.cameraforward))){
-            command.setText("Camera forward");
+            controller.motionCommand("camUp");
         }
         if(v.equals(hudActivity.findViewById(R.id.camerabackward))){
-            command.setText("Camera backward");
+            controller.motionCommand("camDown");
         }
         if(v.equals(hudActivity.findViewById(R.id.cameraleft))){
-            command.setText("Camera left");
+            controller.motionCommand("camLeft");
         }
         if(v.equals(hudActivity.findViewById(R.id.cameraright))){
-            command.setText("Camera right");
-        }
-        if(v.equals(hudActivity.findViewById(R.id.stopCamera))){
-            command.setText("Camera stop");
+            controller.motionCommand("camRight");
         }
     }
 }
