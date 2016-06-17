@@ -9,211 +9,233 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="bbcag.ch.myapplication.HUDActivity">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/LayoutHUD"
-        android:weightSum="1">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/LayoutLightAndLeftButton"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/LayoutHUD"
             android:weightSum="1">
 
-            <Switch
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:text="Light"
-                android:id="@+id/LightSwitch"
-                android:checked="false" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/LayoutLightAndLeftButton"
+                android:weightSum="1">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:id="@+id/Spacer1"
-                android:layout_weight="0.26" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:id="@+id/Spacer1"
+                    android:layout_weight="0.31" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Rover Control:"
-                android:id="@+id/textView"
-                android:layout_weight="0.10"
-                android:textSize="12dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Rover Control:"
+                    android:id="@+id/textView"
+                    android:layout_weight="0.10"
+                    android:textSize="12dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.26" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20" />
 
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/leftbutton"
-                android:background="@mipmap/leftarrow" />
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/leftbutton"
+                    android:background="@mipmap/leftarrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="63dp"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:id="@+id/LayoutForwardsAndBackwardsButton">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:id="@+id/Spacer2"
+                    android:layout_weight="0.80" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/forwardbutton"
+                    android:background="@mipmap/forwardarrow" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/stopMovement"
+                    android:background="@mipmap/stop" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/backwardbutton"
+                    android:background="@mipmap/backwardarrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:weightSum="1"
+                android:id="@+id/LayoutRightButton">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="138dp"
+                    android:id="@+id/Spacer4"
+                    android:layout_weight="0.31" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/rightbutton"
+                    android:background="@mipmap/rightarrow"
+                    android:adjustViewBounds="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:layout_weight="1.01">
+
+                <Switch
+                    android:layout_width="84dp"
+                    android:layout_height="wrap_content"
+                    android:text="Light"
+                    android:id="@+id/LightSwitch"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Command:"
+                    android:id="@+id/textView3"
+                    android:layout_gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:id="@+id/command"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/linearLayout"
+                android:weightSum="1" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:id="@+id/space"
+                    android:layout_weight="0.34" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Camera Control:"
+                    android:id="@+id/textView2"
+                    android:layout_weight="0.15"
+                    android:textSize="12dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/cameraleft"
+                    android:background="@mipmap/turnleftarrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:id="@+id/linearLayout2" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:id="@+id/space2"
+                    android:layout_weight="0.80" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/cameraforward"
+                    android:background="@mipmap/forwardarrow" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/stopCamera"
+                    android:background="@mipmap/stop" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/camerabackward"
+                    android:background="@mipmap/backwardarrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:id="@+id/linearLayout3" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="138dp"
+                    android:id="@+id/space4"
+                    android:layout_weight="0.37" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/cameraright"
+                    android:background="@mipmap/turnrightarrow"
+                    android:adjustViewBounds="true" />
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="1"
-            android:id="@+id/LayoutForwardsAndBackwardsButton">
+            android:id="@+id/imageView" />
+    </FrameLayout>
 
-            <Space
-                android:layout_width="80dp"
-                android:layout_height="57dp"
-                android:id="@+id/Spacer2"
-                android:layout_weight="0.65" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/forwardbutton"
-                android:background="@mipmap/forwardarrow" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.14"
-                android:id="@+id/Spacer3" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/backwardbutton"
-                android:background="@mipmap/backwardarrow" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:weightSum="1"
-            android:id="@+id/LayoutRightButton">
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="138dp"
-                android:id="@+id/Spacer4"
-                android:layout_weight="0.31" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/rightbutton"
-                android:background="@mipmap/rightarrow"
-                android:adjustViewBounds="true" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:weightSum="1">
-
-            <Space
-                android:layout_width="43dp"
-                android:layout_height="20px"
-                android:layout_weight="0.10" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/linearLayout"
-            android:weightSum="1" >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:id="@+id/space"
-                android:layout_weight="0.34" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Camera Control:"
-                android:id="@+id/textView2"
-                android:layout_weight="0.15"
-                android:textSize="12dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.15" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/imageButton"
-                android:background="@mipmap/turnleftarrow" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:weightSum="1"
-            android:id="@+id/linearLayout2" >
-
-            <Space
-                android:layout_width="80dp"
-                android:layout_height="57dp"
-                android:id="@+id/space2"
-                android:layout_weight="0.65" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/imageButton2"
-                android:background="@mipmap/forwardarrow" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.14"
-                android:id="@+id/space3" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/imageButton3"
-                android:background="@mipmap/backwardarrow" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:weightSum="1"
-            android:id="@+id/linearLayout3" >
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="138dp"
-                android:id="@+id/space4"
-                android:layout_weight="0.31" />
-
-            <ImageButton
-                android:layout_width="84dp"
-                android:layout_height="73dp"
-                android:id="@+id/imageButton4"
-                android:background="@mipmap/turnrightarrow"
-                android:adjustViewBounds="true" />
-        </LinearLayout>
-
-    </LinearLayout>
 </RelativeLayout>
